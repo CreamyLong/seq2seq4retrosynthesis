@@ -10,7 +10,7 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 
-from evaluate import evaluateRandomly,evaluateAll
+from evaluate import evaluateRandomly, evaluateAll
 from prepare import input_lang, output_lang, pairs
 from train import trainIters
 
@@ -25,5 +25,5 @@ encoder1 = torch.load('models/encoder.pth').to(device)
 
 attn_decoder1 = torch.load('models/decoder.pth').to(device)
 
-evaluateRandomly(encoder1, attn_decoder1, pairs, n=1)
+# evaluateRandomly(encoder1, attn_decoder1, pairs, n=1)
 evaluateAll(encoder1, attn_decoder1, pairs)

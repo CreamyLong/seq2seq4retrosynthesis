@@ -1,4 +1,3 @@
-
 from __future__ import unicode_literals, print_function, division
 from io import open
 import unicodedata
@@ -11,8 +10,6 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 from config import MAX_LENGTH, SOS_token, EOS_token
-
-
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -64,8 +61,8 @@ class Lang:
 
 def readLangs(lang1, lang2, reverse=False):
     print("Reading lines...")
-    src_lines = open('./AGES/src-test.txt', encoding='utf-8').read().strip().split('\n')
-    tgt_lines = open('./AGES/tgt-test.txt', encoding='utf-8').read().strip().split('\n')
+    src_lines = open('./AGES/src-val.txt', encoding='utf-8').read().strip().split('\n') 
+    tgt_lines = open('./AGES/tgt-val.txt', encoding='utf-8').read().strip().split('\n')
 
     # Split every line into pairs and normalize
     pairs = []
