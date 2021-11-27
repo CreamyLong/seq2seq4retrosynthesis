@@ -11,10 +11,7 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 
-from config import MAX_LENGTH
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+from config import MAX_LENGTH, device
 
 class EncoderRNN(nn.Module):
     def __init__(self, input_size, hidden_size):

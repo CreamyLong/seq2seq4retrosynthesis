@@ -17,9 +17,7 @@ from evaluate import evaluate, can_smi
 from prepare import input_lang, output_lang, pairs
 from model import EncoderRNN, AttnDecoderRNN
 
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 
 def one_step(encoder, decoder, input):
 
@@ -29,8 +27,8 @@ def one_step(encoder, decoder, input):
 
     return output_sentence
 
-encoder1 = torch.load('models/encoder.pth').to(device)
-attn_decoder1 = torch.load('models/decoder.pth').to(device)
+encoder1 = torch.load('model/AGEs_2.3.4/encoder.pth').to(device)
+attn_decoder1 = torch.load('model/AGEs_2.3.4/decoder.pth').to(device)
 
 # for pair in pairs:
 #     print(pair[0])
